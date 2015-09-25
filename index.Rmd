@@ -1,0 +1,89 @@
+---
+title       : Finding Your Crossover Point
+subtitle    : 
+author      : Jeff Jetton
+job         : Developing Data Products Course
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+--- .class #id
+
+<style> .title-slide {background-color: #EEEEEE; </style>
+<style> em {font-style: italic}; </style>
+
+## Financial Independence?
+
+<br>
+<br>
+<br>
+
+- Will you have to work forever?
+- When (if ever) can you afford to retire?
+- How much will you need to have saved up by then?
+- Is retiring early even <em>possible</em>?
+
+--- .class #id
+
+
+## Many People Don't Like to Think About It!
+
+In a recent survey, less than half of American workers 25 years or older reported that they (or their spouse) have ever tried to figure out how much money they will need to have saved up in order to live comfortably in retirement. 
+
+```{r nonsavers, echo=FALSE, fig.height=6, fig.width=8}
+
+# Use data as presented in EBRI's survey at
+# http://www.ebri.org/pdf/surveys/rcs/2015/RCS15.FS-4.Age.pdf
+data <- c(37, 52, 50, 54)
+names(data) <- c("25-34", "35-44", "45-54", "55+")
+# Plot the bars
+barplot(data, names.arg=names(data), ylim=c(0, 100),
+        xlab="Worker Age", col="lightblue", ylab="Percent",
+        main="Percent Who Have Determined Their Retirement Needs",
+        bg="red")
+# Add percentage values to bars
+text(seq(0.75, 4.35, length.out=4), 1, paste0(data, "%"), pos=3)
+# Add source information
+text(0.1, 99, "Source:", cex=0.7, pos=4)
+text(0.5, 99, "Employee Benefit Research Institute and Greenwald & Associates",
+     cex=0.7, pos=4)
+text(0.5, 95.5, "2015 Retirement Confidence Survey", cex=0.7, pos=4)
+# Add overall average line
+abline(h=48, lwd=3, col=rgb( .84, .33, .33, .7))
+text(0.1, 51, "Overall = 48%", pos=4, col=rgb( .84, .33, .33))
+```
+
+--- .class #id
+
+## Introducting the Crossover Point
+
+Retirement planning can be complicated. The "Crossover Point", first popularized in the book *Your Money or Your Life* by Vicki Robin and Joe Dominquez, distills the basics down to just a few simple concepts:
+
+1. You have expenses in your life that cost a certain amount
+2. Any money you've saved or invested is generating a certain amount of income for you
+3. If the value of your investments increase enough, and your expenses don't also increase too much, eventually you'll reach your <strong>Crossover Point</strong>.
+
+As the book puts it:
+
+<font color="lightseagreen">*At the Crossover Point, where monthly investment income crosses above monthly expenses, you will be financially independent in the traditional sense of that term. You will have a safe, steady income for life from a source other than a job.*</font>
+
+--- .class #id
+
+
+## Your Next Step
+
+Sounds pretty good, doesn't it? Wouldn't you like to know when *your* Crossover Point may be? 
+
+Well there's a Shiny App for that! Check it out at http://jeffjetton.shinyapps.io/project
+
+<br>
+
+Some links for further information and inspiration:
+
+ - [Bogleheads](http://www.bogleheads.org/): The best investing forum on the internet
+ - [Mr. Money Mustache](http://www.mrmoneymustache.com/): A sometimes-extreme financial independence blog, but worth a read
+ - [A Summary of Your Money or Your Life](https://ymoyl.wordpress.com/summary-of-your-money-or-your-life/) (Note that the Shiny app uses a slightly different formula from the one outlined in the book)
+
+
