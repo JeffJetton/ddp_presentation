@@ -25,10 +25,6 @@ knit        : slidify::knit2slides
 - How much will you need to have saved up by then?
 - Is retiring early even <em>possible</em>?
 
-<br>
-<br>
-Read on...!
-
 --- .class #id
 
 
